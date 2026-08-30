@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     AUTOMATA (R) - SEPARATED BUILD
+     Original: single-file build at backup/index.html
+     This file now loads css/style.css and js/script.js.
+     ============================================================ -->
+<html lang="en" class="no-js">
+<head>
+  <script>document.documentElement.classList.remove("no-js");</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0b0d" />
+  <title>AUTOMATA® — Web Development &amp; AI Automation Studio</title>
+  <meta name="description" content="AUTOMATA is a web development & AI automation studio. We build premium websites that convert visitors — then wire them to WhatsApp bots, CRMs, and workflows that run your business while you sleep." />
+  <meta property="og:title" content="AUTOMATA® — Sites that sell. Systems that run." />
+  <meta property="og:description" content="Premium web development + AI automation. Drag the budget slider, see exactly what you get." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts: Space Grotesk (display) / Inter (body) / JetBrains Mono (labels, numbers) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <a class="skip-link" href="#hero">Skip to content</a>
+
+  <!-- ============================================================
+       [Preloader] — branded counter + logo reveal, then panel wipe
+  ============================================================ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__panel preloader__panel--top"></div>
+    <div class="preloader__panel preloader__panel--bottom"></div>
+    <div class="preloader__center">
+      <div class="preloader__logo" id="preloader-logo">AUTOMATA<sup>®</sup></div>
+      <div class="preloader__row">
+        <span class="preloader__label label">Loading the machine</span>
+        <span class="preloader__counter" id="preloader-counter">000</span>
+      </div>
+      <div class="preloader__bar"><span id="preloader-bar"></span></div>
+    </div>
+  </div>
+
+  
+
+  <!-- [Noise / grain overlay] — fixed, subtle film grain over everything -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- [Scroll progress] — thin accent bar pinned to top of viewport -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       [Navigation] — glass bar, shrinks + gains border on scroll
+  ============================================================ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__logo" href="#hero" aria-label="AUTOMATA home">
+        AUTOMATA<sup>®</sup>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#manifesto">Manifesto</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#plans">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav__cta">
+        <a href="#contact" class="btn btn--ghost btn--sm magnetic">Start a project</a>
+        <button class="nav__burger" id="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu-overlay">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- [Mobile Menu] — fullscreen overlay, staggered link reveal -->
+  <div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+    <nav class="menu-overlay__links" aria-label="Mobile">
+      <a href="#manifesto" style="--i:0">Manifesto</a>
+      <a href="#services" style="--i:1">Services</a>
+      <a href="#process" style="--i:2">Process</a>
+      <a href="#plans" style="--i:3">Pricing</a>
+      <a href="#contact" style="--i:4">Contact</a>
+    </nav>
+    <div class="menu-overlay__foot">
+      <span class="label">AUTOMATA® — EST. 2019</span>
+      <a class="label label--accent" href="#contact">hello@automata.studio</a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ============================================================
+         [Hero] — layered parallax, split-text headline, ambient orb
+    ============================================================ -->
+    <section class="hero" id="hero">
+      <!-- parallax background layers -->
+      <div class="hero__grid" data-depth="0.15" aria-hidden="true"></div>
+      <div class="hero__glow" data-depth="0.35" aria-hidden="true"></div>
+      <!-- orb intentionally has no data-depth: its ambient drift tween
+           owns x/y and would fight a mouse-parallax tween on the same props -->
+      <div class="hero__orb" id="hero-orb" aria-hidden="true"></div>
+      <div class="hero__watermark" id="hero-watermark" aria-hidden="true">AUTOMATA®</div>
+
+      <div class="hero__inner" id="hero-inner">
+        <p class="hero__eyebrow label" data-hero="1">Web Development × AI Automation — Est. 2019</p>
+
+        <h1 class="hero__title" id="hero-title">
+          <span class="hero__line">Sites that sell,</span>
+          <span class="hero__line">systems that <span class="accent-stroke">run.</span></span>
+        </h1>
+
+        <div class="hero__bottom">
+          <p class="hero__sub" data-hero="2">
+            We build premium websites that convert visitors — then wire them to WhatsApp bots,
+            CRMs and workflows that keep selling while you sleep.
+          </p>
+          <div class="hero__cta" data-hero="3">
+            <a href="#plans" class="btn btn--accent btn--lg magnetic">Start your project</a>
+            <a href="#services" class="btn btn--link">See what we do <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+
+        <div class="hero__meta label" data-hero="4">
+          <span>Scroll to explore</span>
+          <span class="hero__meta-right">40+ Projects / 12k Hours Automated / 99.9% Uptime</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- [Marquee] — infinite service keyword strip -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span class="marquee__item">Web Development</span><span class="marquee__star">✦</span>
+        <span class="marquee__item">AI Automation</span><span class="marquee__star">✦</span>
+        <span class="marquee__item">UI/UX Design</span><span class="marquee__star">✦</span>
+        <span class="marquee__item">Integrations</span><span class="marquee__star">✦</span>
+        <span class="marquee__item">Performance</span><span class="marquee__star">✦</span>
+        <span class="marquee__item">Motion</span><span class="marquee__star">✦</span>
+        <!-- second copy — required for the seamless -50% loop -->
+        <span class="marquee__item">Web Development</span><span class="marquee__star">✦</span>
+        <span class="marquee__item">AI Automation</span><span class="marquee__star">✦</span>
+        <span class="marquee__item">UI/UX Design</span><span class="marquee__star">✦</span>
+        <span class="marquee__item">Integrations</span><span class="marquee__star">✦</span>
+        <span class="marquee__item">Performance</span><span class="marquee__star">✦</span>
+        <span class="marquee__item">Motion</span><span class="marquee__star">✦</span>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         [Manifesto] — scroll-scrubbed line-by-line text reveal
+    ============================================================ -->
+    <section class="section manifesto" id="manifesto">
+      <header class="section-head" data-reveal>
+        <span class="label">(01) — Manifesto</span>
+      </header>
+      <p class="manifesto__text" id="manifesto-text">
+        Most studios hand you a website and disappear. We build the machine — a premium site that
+        converts, wired to your WhatsApp, CRM and calendar — so leads follow up with themselves,
+        invoices chase themselves, and you wake up to a business that ran itself overnight.
+      </p>
+      <div class="manifesto__foot" data-reveal>
+        <p class="manifesto__note">That’s the difference between a website and a revenue system.</p>
+        <a href="#services" class="btn btn--link">Our services <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [Services] — asymmetric editorial grid, clip-path media reveals
+    ============================================================ -->
+    <section class="section services" id="services">
+      <header class="section-head" data-reveal>
+        <span class="label">(02) — Services</span>
+        <h2 class="h-section">Everything your business needs to sell <em>&amp; scale</em></h2>
+      </header>
+
+      <div class="services__grid" data-reveal-group>
+        <article class="service-card" data-reveal-item data-cursor="VIEW">
+          <div class="service-card__media" data-clip>
+            <span class="service-card__num label">01</span>
+            <div class="media-browser" aria-hidden="true">
+              <div class="media-browser__bar"><i></i><i></i><i></i><b>automata.studio</b></div>
+              <div class="media-browser__lines"><span></span><span></span><span></span><b class="caret"></b></div>
+            </div>
+          </div>
+          <div class="service-card__body">
+            <h3>Web Development</h3>
+            <p>Fast, cinematic, conversion-focused websites. Custom GSAP motion, green Core Web Vitals — built to feel expensive.</p>
+            <ul class="taglist">
+              <li>Design systems</li><li>GSAP motion</li><li>Headless CMS</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="service-card service-card--push" data-reveal-item data-cursor="VIEW">
+          <div class="service-card__media" data-clip>
+            <span class="service-card__num label">02</span>
+            <div class="media-flow" aria-hidden="true">
+              <span class="flow-node">Lead in</span><i class="flow-conn"></i><span class="flow-node flow-node--accent">AI bot</span><i class="flow-conn"></i><span class="flow-node">CRM</span>
+            </div>
+          </div>
+          <div class="service-card__body">
+            <h3>AI Automation</h3>
+            <p>Chatbots, lead nurturing and back-office workflows that answer, qualify and follow up — 24/7, without you.</p>
+            <ul class="taglist">
+              <li>WhatsApp bots</li><li>AI workflows</li><li>Lead scoring</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="service-card" data-reveal-item data-cursor="VIEW">
+          <div class="service-card__media" data-clip>
+            <span class="service-card__num label">03</span>
+            <div class="media-integrate" aria-hidden="true">
+              <span class="int-node">CRM</span><i class="int-link"></i><span class="int-node int-node--accent">YOUR SITE</span><i class="int-link"></i><span class="int-node">Payments</span>
+            </div>
+          </div>
+          <div class="service-card__body">
+            <h3>Integrations</h3>
+            <p>Your site talking to your tools — CRM, payments, email, analytics. One pipeline, zero copy-paste.</p>
+            <ul class="taglist">
+              <li>CRM sync</li><li>Payments</li><li>Analytics</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="service-card service-card--push" data-reveal-item data-cursor="VIEW">
+          <div class="service-card__media" data-clip>
+            <span class="service-card__num label">04</span>
+            <div class="media-speed" aria-hidden="true">
+              <b class="media-speed__score">97</b>
+              <div class="media-speed__bars"><span style="--h:62%"></span><span style="--h:84%"></span><span style="--h:100%"></span></div>
+            </div>
+          </div>
+          <div class="service-card__body">
+            <h3>Performance &amp; SEO</h3>
+            <p>Lighthouse 95+, sub-second loads, Core Web Vitals in the green. Fast is a feature — Google agrees.</p>
+            <ul class="taglist">
+              <li>Core Web Vitals</li><li>Technical SEO</li><li>A11y</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [Process] — pinned storytelling section (steps swap on scroll)
+    ============================================================ -->
+    <section class="process" id="process">
+      <div class="process__pin">
+        <header class="process__head">
+          <span class="label">(03) — Process</span>
+          <h2 class="h-section">From idea to machine</h2>
+        </header>
+
+        <div class="process__stage" id="process-stage">
+          <div class="process__step is-active">
+            <span class="process__num">01</span>
+            <h3>Discover</h3>
+            <p>A 30-minute call. We map your goals, your current bottlenecks, and where automation pays for itself.</p>
+            <ul class="taglist"><li>Audit</li><li>Roadmap</li><li>Fixed quote</li></ul>
+          </div>
+          <div class="process__step">
+            <span class="process__num">02</span>
+            <h3>Design</h3>
+            <p>Wireframes first, then a bespoke design system built around your brand — not a template.</p>
+            <ul class="taglist"><li>Wireframes</li><li>Design system</li><li>First pass in 5 days</li></ul>
+          </div>
+          <div class="process__step">
+            <span class="process__num">03</span>
+            <h3>Build</h3>
+            <p>Production-grade code. GSAP choreography, CMS and integrations — shipped fast, tested properly.</p>
+            <ul class="taglist"><li>GSAP motion</li><li>CMS</li><li>CWV 95+</li></ul>
+          </div>
+          <div class="process__step">
+            <span class="process__num">04</span>
+            <h3>Automate</h3>
+            <p>We wire the workflows: lead capture → WhatsApp → CRM → auto follow-ups. Then hand you the keys.</p>
+            <ul class="taglist"><li>WhatsApp flows</li><li>CRM sync</li><li>30-day support</li></ul>
+          </div>
+        </div>
+
+        <div class="process__rail">
+          <span class="process__rail-fill" id="process-fill"></span>
+          <span class="process__index label" id="process-index">01 / 04</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [Stats] — animated counters
+    ============================================================ -->
+    <section class="section stats" id="stats">
+      <div class="stats__grid" data-reveal-group>
+        <div class="stat" data-reveal-item>
+          <span class="stat__num" data-count="40" data-suffix="+">0</span>
+          <span class="stat__label label">Projects shipped</span>
+        </div>
+        <div class="stat" data-reveal-item>
+          <span class="stat__num" data-count="12000" data-suffix="+">0</span>
+          <span class="stat__label label">Hours automated</span>
+        </div>
+        <div class="stat" data-reveal-item>
+          <span class="stat__num" data-count="99.9" data-decimals="1" data-suffix="%">0</span>
+          <span class="stat__label label">Automation uptime</span>
+        </div>
+        <div class="stat" data-reveal-item>
+          <span class="stat__num" data-count="3.2" data-decimals="1" data-suffix="×">0</span>
+          <span class="stat__label label">Avg. conversion lift</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [Budget Configurator + Tiered Dashboard Preview]
+         THE CENTERPIECE — see main.js [Tier Feature Data]
+    ============================================================ -->
+    <section class="section plans" id="plans">
+      <header class="section-head" data-reveal>
+        <span class="label">(04) — Pricing</span>
+        <h2 class="h-section">What fits your <em>budget?</em></h2>
+      </header>
+
+      <div class="plans__panel glass" data-reveal>
+        <!-- Left column: controls -->
+        <div class="plans__controls">
+          <p class="plans__microcopy">
+            <span class="label label--accent">Drag the slider</span>
+            <span class="plans__hint">— the plan, features and dashboard update live.</span>
+          </p>
+
+          <!-- [Budget Slider Logic] target -->
+          <div class="plans__slider-wrap" data-cursor="DRAG">
+            <input type="range" class="plans__range" id="budget-range"
+                   min="15000" max="150000" step="1000" value="15000"
+                   data-cursor="DRAG"
+                   aria-label="Your budget" aria-describedby="price-value" />
+            <div class="plans__markers" id="plans-markers" aria-hidden="true">
+              <span class="plans__marker" data-marker="15000"><i></i><b>₹15k</b></span>
+              <span class="plans__marker" data-marker="30000"><i></i><b>₹30k</b></span>
+              <span class="plans__marker" data-marker="60000"><i></i><b>₹60k</b></span>
+              <span class="plans__marker" data-marker="150000"><i></i><b>₹1.5L+</b></span>
+            </div>
+          </div>
+
+          <!-- Preset tier chips -->
+          <div class="plans__presets" role="group" aria-label="Quick tier selection">
+            <button class="preset is-active" data-tier="0">Starter</button>
+            <button class="preset" data-tier="1">Growth</button>
+            <button class="preset" data-tier="2">Premium</button>
+          </div>
+
+          <!-- Running price display -->
+          <div class="plans__price" aria-live="polite">
+            <span class="label">Estimated investment</span>
+            <div class="plans__price-value" id="price-value">₹15,000</div>
+            <span class="plans__tier-tag" id="plans-tier-tag">Starter</span>
+            <p class="plans__tagline" id="plans-tagline">Launch-ready single-page site with premium motion.</p>
+          </div>
+
+          <!-- Feature list — rebuilt per tier, animated swap -->
+          <div class="plans__features">
+            <span class="label">What’s included</span>
+            <ul class="features" id="features-list" aria-live="polite"></ul>
+          </div>
+
+          <!-- [CTA Handoff] — carries tier + price into the contact step -->
+          <div class="plans__cta">
+            <button class="btn btn--accent btn--lg" id="get-plan">Get the <span id="cta-tier">Starter</span> plan <span aria-hidden="true">→</span></button>
+            <a class="btn btn--ghost" id="wa-cta" href="#" target="_blank" rel="noopener">Talk on WhatsApp</a>
+          </div>
+        </div>
+
+        <!-- Right column: tiered dashboard preview -->
+        <div class="plans__dash" id="dashboard-grid">
+          <div class="plans__dash-head">
+            <span class="label">Your dashboard preview</span>
+            <span class="chip chip--live" id="dash-widget-count">3 / 8 widgets unlocked</span>
+          </div>
+
+          <!-- [Dashboard Card Reveal] — each widget has data-tier (0=starter … 2=premium) -->
+          <div class="dashboard" id="dashboard">
+            <article class="widget" data-tier="0">
+              <header class="widget__head">
+                <h3>Site Overview</h3><span class="chip chip--live">Live</span>
+              </header>
+              <div class="widget__body">
+                <ul class="site-list">
+                  <li><i></i>Hero<em>Live</em></li>
+                  <li><i></i>Services<em>Live</em></li>
+                  <li><i></i>Pricing<em>Live</em></li>
+                  <li><i></i>Contact<em>Live</em></li>
+                </ul>
+                <div class="meter"><span style="--w:100%"></span></div>
+                <p class="widget__meta">4 / 4 sections shipped</p>
+              </div>
+            </article>
+
+            <article class="widget" data-tier="0">
+              <header class="widget__head">
+                <h3>Page Speed</h3><span class="chip">Lighthouse</span>
+              </header>
+              <div class="widget__body widget__body--center">
+                <b class="widget__score">97</b>
+                <div class="meter meter--accent"><span style="--w:97%"></span></div>
+                <p class="widget__meta">LCP 0.9s · CLS 0.02 · CWV green</p>
+              </div>
+            </article>
+
+            <article class="widget" data-tier="0">
+              <header class="widget__head">
+                <h3>Analytics</h3><span class="chip chip--up">+18%</span>
+              </header>
+              <div class="widget__body">
+                <svg class="chart" viewBox="0 0 120 44" preserveAspectRatio="none" aria-hidden="true">
+                  <rect x="2"  y="26" width="10" height="18" rx="2"/>
+                  <rect x="16" y="22" width="10" height="22" rx="2"/>
+                  <rect x="30" y="28" width="10" height="16" rx="2"/>
+                  <rect x="44" y="16" width="10" height="28" rx="2"/>
+                  <rect x="58" y="20" width="10" height="24" rx="2"/>
+                  <rect x="72" y="10" width="10" height="34" rx="2"/>
+                  <rect x="86" y="14" width="10" height="30" rx="2"/>
+                  <rect x="100" y="4" width="10" height="40" rx="2" class="chart--hot"/>
+                </svg>
+                <p class="widget__meta"><b>1,240</b> visitors this week</p>
+              </div>
+            </article>
+
+            <article class="widget" data-tier="1">
+              <div class="widget__lock" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+                <span>Growth</span>
+              </div>
+              <header class="widget__head">
+                <h3>WhatsApp Bot</h3><span class="chip chip--live">Online</span>
+              </header>
+              <div class="widget__body">
+                <div class="toggle-row">
+                  <span class="label">Auto-replies</span>
+                  <label class="toggle"><input type="checkbox" checked /><i></i></label>
+                </div>
+                <div class="bubble">Hi! 👋 I’m AUTOMATA’s bot — want a quote for your project?</div>
+                <p class="widget__meta">342 conversations handled this week</p>
+              </div>
+            </article>
+
+            <article class="widget" data-tier="1">
+              <div class="widget__lock" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+                <span>Growth</span>
+              </div>
+              <header class="widget__head">
+                <h3>Automation Logs</h3><span class="chip chip--live">Running</span>
+              </header>
+              <div class="widget__body">
+                <ul class="log-list">
+                  <li><time>09:41</time>Lead captured → CRM<i class="ok">✓</i></li>
+                  <li><time>09:41</time>WhatsApp intro sent<i class="ok">✓</i></li>
+                  <li><time>09:40</time>Quote generated (AI)<i class="run">…</i></li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="widget" data-tier="2">
+              <div class="widget__lock" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+                <span>Premium</span>
+              </div>
+              <header class="widget__head">
+                <h3>AI Workflows</h3><span class="chip chip--live">Active</span>
+              </header>
+              <div class="widget__body">
+                <div class="flow">
+                  <span class="flow-node">Lead</span><i></i><span class="flow-node">Enrich</span><i></i><span class="flow-node flow-node--accent">AI reply</span><i></i><span class="flow-node">CRM</span>
+                </div>
+                <p class="widget__meta">4 workflows · 0 failures · 0.4s avg</p>
+              </div>
+            </article>
+
+            <article class="widget" data-tier="2">
+              <div class="widget__lock" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+                <span>Premium</span>
+              </div>
+              <header class="widget__head">
+                <h3>Lead Pipeline</h3><span class="chip chip--up">+12%</span>
+              </header>
+              <div class="widget__body">
+                <div class="funnel">
+                  <span style="--w:100%"><b>Visitors</b>1,240</span>
+                  <span style="--w:72%"><b>Leads</b>86</span>
+                  <span style="--w:46%"><b>Quotes</b>12</span>
+                  <span style="--w:30%"><b>Deals</b>4</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="widget" data-tier="2">
+              <div class="widget__lock" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+                <span>Premium</span>
+              </div>
+              <header class="widget__head">
+                <h3>Monitoring</h3><span class="chip chip--live">Healthy</span>
+              </header>
+              <div class="widget__body">
+                <b class="widget__score">99.98%</b>
+                <svg class="chart chart--line" viewBox="0 0 120 30" preserveAspectRatio="none" aria-hidden="true">
+                  <polyline points="0,26 14,22 28,24 42,14 56,18 70,10 84,13 98,6 120,3" />
+                </svg>
+                <p class="widget__meta">Last incident 212 days ago</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [Contact / CTA] — receives tier + price from configurator
+    ============================================================ -->
+    <section class="section contact" id="contact">
+      <header class="section-head" data-reveal>
+        <span class="label">(05) — Contact</span>
+        <h2 class="h-section">Let’s machine your <em>business.</em></h2>
+      </header>
+
+      <div class="contact__grid" data-reveal>
+        <p class="contact__lead">
+          Tell us what you’re building. You’ll get a fixed quote and a 30-minute call —
+          response within 24 hours, no retainer required.
+        </p>
+
+        <!-- [CTA Handoff] target — selection summary updated live by JS -->
+        <div class="contact__selection glass">
+          <span class="label">Your selection</span>
+          <div class="contact__sel-row">
+            <strong id="sel-tier">Starter</strong>
+            <span id="sel-price">₹15,000</span>
+          </div>
+          <p id="sel-tagline">Launch-ready single-page site with premium motion.</p>
+          <a id="wa-cta-2" class="btn btn--accent btn--lg" href="#" target="_blank" rel="noopener">Talk to me on WhatsApp <span aria-hidden="true">→</span></a>
+          <div class="contact__sel-foot">
+            <a class="btn btn--link" href="mailto:hello@automata.studio">hello@automata.studio</a>
+            <button class="btn btn--link" id="adjust-budget">Adjust budget <span aria-hidden="true">↑</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       [Footer]
+  ============================================================ -->
+  <footer class="footer">
+    <div class="footer__mark" aria-hidden="true">AUTOMATA<sup>®</sup></div>
+    <div class="footer__grid">
+      <div class="footer__col">
+        <span class="label">Sitemap</span>
+        <a href="#manifesto">Manifesto</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#plans">Pricing</a>
+      </div>
+      <div class="footer__col">
+        <span class="label">Elsewhere</span>
+        <a href="#" rel="noopener">Instagram</a>
+        <a href="#" rel="noopener">Dribbble</a>
+        <a href="#" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer__col">
+        <span class="label">Contact</span>
+        <a href="mailto:hello@automata.studio">hello@automata.studio</a>
+        <a href="#" id="wa-footer" target="_blank" rel="noopener">WhatsApp</a>
+        <span class="footer__muted">India — working worldwide</span>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 AUTOMATA® — All rights reserved</span>
+      <span class="label">Built with GSAP · Lenis · Too much coffee</span>
+    </div>
+  </footer>
+
+  <!-- [Libraries] GSAP 3.13 + ScrollTrigger + SplitText + CustomEase + Lenis -->
+  <!-- main.js assumes these load; if the CDN is unreachable, the CSS
+       fail-safes (.no-js + .preloader animation) keep the page usable -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomEase.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
