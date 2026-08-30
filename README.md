@@ -2,7 +2,7 @@
 
 A landing page concept for a studio that builds premium websites and wires them into automation — WhatsApp bots, CRMs, and workflows that keep running after the site ships.
 
-🔗 **Live:** [REPLACE_WITH_ACTUAL_URL]
+🔗 **Live:** https://automata-studio.akshaycodecrafter.workers.dev
 
 ## Preview
 
