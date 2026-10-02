@@ -1,5 +1,5 @@
 /* ============================================================
-   AUTOMATA® — styles.css
+   AUTOMATA — styles.css
    Sections:
      [Design Tokens]      — palette, type scale, spacing, easing
      [Base & Reset]
@@ -27,7 +27,7 @@
    ============================================================ */
 :root {
   /* Palette — theme by editing only these values */
-  --bg:        #212123;
+  --bg:        #171719;
   --surface:   #2b2b2e;
   --surface-2: #343437;
   --ink:       #ececec;
@@ -315,7 +315,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 }
 .nav.is-scrolled {
   height: 3.9rem;
-  background: rgba(33, 33, 35, 0.72);
+  background: rgba(23, 23, 25, 0.72);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom-color: var(--line-soft);
@@ -367,7 +367,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 /* Mobile menu overlay */
 .menu-overlay {
   position: fixed; inset: 0; z-index: 95;
-  background: rgba(33, 33, 35, 0.96);
+  background: rgba(23, 23, 25, 0.96);
   backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
   display: flex; flex-direction: column; justify-content: center;
   padding: 2rem;
@@ -973,7 +973,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 .widget.is-locked { opacity: 0.55; filter: blur(2.5px) saturate(0.55); }
 .widget.is-locked::after {
   content: ""; position: absolute; inset: 0; z-index: 2;
-  background: radial-gradient(120% 120% at 50% 0%, rgba(33,33,35,0.25), rgba(33,33,35,0.55));
+  background: radial-gradient(120% 120% at 50% 0%, rgba(23,23,25,0.25), rgba(23,23,25,0.55));
 }
 .widget__lock {
   position: absolute; inset: 0; z-index: 3;
@@ -985,7 +985,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   font-family: var(--font-mono); font-size: 0.62rem; font-weight: 600;
   letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--muted);
-  border: 1px solid var(--line); background: rgba(33,33,35,0.7);
+  border: 1px solid var(--line); background: rgba(23,23,25,0.7);
   backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
   border-radius: 999px; padding: 0.5rem 0.9rem;
 }
@@ -1065,6 +1065,14 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
   color: var(--faint); font-size: var(--text-xs); font-family: var(--font-mono);
 }
+
+.footer__disclaimer {
+  margin-top: 1.6rem; max-width: 78ch;
+  font-family: var(--font-mono); font-size: var(--text-xs);
+  line-height: 1.8; letter-spacing: 0.02em; color: var(--faint);
+}
+.footer__disclaimer strong { color: var(--muted); font-weight: 600; }
+.demo-note { display: block; margin-top: 1.4rem; text-align: center; color: var(--faint); }
 
 /* ============================================================
    [Scrollbar / Focus]

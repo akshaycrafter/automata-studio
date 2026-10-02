@@ -1,5 +1,5 @@
 /* ============================================================
-   AUTOMATA® — main.js
+   AUTOMATA — main.js
    Sections:
      [GSAP Setup & Easing]
      [Lenis Smooth Scroll]
@@ -601,9 +601,9 @@ function applyLockStates(tierIndex) {
    [CTA Handoff]
    — every plan change rebuilds the WhatsApp deep link with the
      current tier + price. "Get this plan" jumps to contact.
-     ⚠️ TODO: replace 919999999999 with your WhatsApp number.
+     DEMO: placeholder number only (not a real WhatsApp number).
    ============================================================ */
-const WA_NUMBER = "919999999999";
+const WA_NUMBER = "910000000000"; // DEMO placeholder - intentionally not a real WhatsApp number
 
 function buildWhatsAppUrl() {
   const tier = TIERS[state.tierIndex];
